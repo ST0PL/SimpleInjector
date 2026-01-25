@@ -1,0 +1,24 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="ExampleCpp/ExampleCpp.vcxproj" Id="07c59d77-cfd5-4495-a07a-ed6b0fc71e82" />
+  <Project Path="ExampleNativeAOT/ExampleNativeAOT.csproj">
+    <Platform Solution="*|x64" Project="x64" />
+    <Build Solution="*|x86" Project="false" />
+    <Build Solution="Release|x64" Project="false" />
+  </Project>
+  <Project Path="InjectorExample/InjectorExample.csproj">
+    <Platform Solution="*|x64" Project="x64" />
+    <Platform Solution="*|x86" Project="x86" />
+    <Build Solution="*|x86" Project="false" />
+    <Build Solution="Release|x64" Project="false" />
+  </Project>
+  <Project Path="SimpleInjector/SimpleInjector.csproj">
+    <Platform Solution="*|x64" Project="x64" />
+    <Platform Solution="*|x86" Project="x86" />
+    <Build Solution="*|x86" Project="false" />
+    <Build Solution="Release|x64" Project="false" />
+  </Project>
+</Solution>

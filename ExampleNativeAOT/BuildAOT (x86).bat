@@ -1,0 +1,1 @@
+dotnet publish -c Debug -r win-x86 -o ..\bin\Debug
