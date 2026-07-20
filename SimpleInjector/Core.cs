@@ -10,9 +10,9 @@ namespace SimpleInjector
             if (string.IsNullOrEmpty(str))
                 return IntPtr.Zero;
 
-            byte[] utf16 = Encoding.Unicode.GetBytes(str);
-            nint strAddr = Native.VirtualAllocEx(processHandle, 0, (nuint)utf16.Length+1, Native.MEM_RESERVE | Native.MEM_COMMIT, Native.PAGE_READWRITE);
-            Native.WriteProcessMemory(processHandle, strAddr, utf16, (nuint)utf16.Length+1, out _);
+            byte[] utf16 = Encoding.Unicode.GetBytes(str+'\0');
+            nint strAddr = Native.VirtualAllocEx(processHandle, 0, (nuint)utf16.Length, Native.MEM_RESERVE | Native.MEM_COMMIT, Native.PAGE_READWRITE);
+            Native.WriteProcessMemory(processHandle, strAddr, utf16, (nuint)utf16.Length, out _);
             return strAddr;
         }
 

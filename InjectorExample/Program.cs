@@ -16,12 +16,8 @@ class Program
         Console.Clear();
         Console.WriteLine("Injecting...");
 
-        try
-        {
-            Core.InjectDll(processName, Path.GetFullPath("ExampleCpp.dll"), "Initialize", arg: "Boo!;Hello from C++!");
-            Core.InjectDll(processName, Path.GetFullPath("ExampleNativeAOT.dll"), "Initialize", arg: "Boo!;Hello from C#!");
-        }
-        catch(Exception ex) { Console.WriteLine("Exception was thrown: " + ex.Message); return; }
+        Core.InjectDll(processName, Path.GetFullPath("ExampleCpp.dll"), "Initialize", arg: "Boo!;Hello from C++!");
+        Core.InjectDll(processName, Path.GetFullPath("ExampleNativeAOT.dll"), "Initialize", arg: "Boo!;Hello from C#!");
 
         Console.WriteLine("Success!");
         Console.Write("Press any key for exit...");
